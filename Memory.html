@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        margin: 0;
+        background: #000;
+        overflow: hidden;
+        font-family: 'Segoe Ui',sans-serif;
+
+    }
+    .labelpsw{
+        color: #ff4d88;
+        font-size: 28px;
+        
+          
+    }
+    .psword{
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+        font-size: 20px;
+        border: #ff4d88 solid 2px;
+        border-radius: 10px;
+    }
+    .form{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .donebtn{
+            margin-top: 40px;
+            margin-left: 90px;
+            padding: 10px 30px;
+            font-size: 15px;
+            background: #ff4d88;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ff4d88;
+    }
+        
+        .cuteGIF{
+            width: 300px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+    
+
+
+
+    </style>
+    
+    
+</head>
+<body>
+
+    <img src="giphy.gif" alt="gif" class="cuteGIF">
+    <form class="form">
+
+        <label for="psword" class="labelpsw"> Enter the secret passcode</label></p>
+        <input type="password" class="psword" placeholder="password" required>
+        <input type="button" onClick="doneBtn()" class="donebtn" value="Submit">
+
+    </form>
+    
+    
+
+    <script>
+        function doneBtn(){
+            const password=document.querySelector(".psword").value;
+            if(password=="121659"){
+                window.location.href="gift.html";
+            }else{
+                const gif=document.querySelector(".cuteGIF");
+                gif.src="huh-confused.gif";
+                const label=document.querySelector(".labelpsw");
+                label.textContent="IT'S CLEARLY WRONG!!";
+
+            }
+            document.querySelector(".psword").value="";
+        }
+
+    </script>
+    
+</body>
+</html>

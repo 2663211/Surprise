@@ -13,13 +13,62 @@
         font-family: 'Segoe Ui',sans-serif;
 
     }
+    .MySlides{
+        width: 500px;
+            height: 500px;
+            display: block;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        
+
+    }
+    .text{
+            position:absolute;
+            width:100%;
+            text-align: center;
+            color: #ff9ecf;
+            text-shadow: 0 0 10px #ff4d88
+        }
+        .top{
+            top:40px;
+            font-size: 32px;
+
+        }
+        .bottom{
+            bottom:150px;
+            font-size:28px;
+        }
     
     </style>
 </head>
 <body>
-
-    <div class="text">Click to open your present</div>
-    <img src="storerewards.gif" alt="gift GIF" class="giftGIF">
+    <div class="text top">Memories❤️️</div>
+    <div class="text bottom">Little Something something❤️</div>
+    <img src="p1.jpeg" class="MySlides">
+    <img src="P2.jpeg" alt="picture" class="MySlides">
+    <img src="p3.jpeg" alt="picture" class="MySlides">
+    <img src="p4.jpeg" alt="picture" class="MySlides">
+    <img src="p5.jpeg" alt="picture" class="MySlides">
     
+
+
+    <script>
+        var slideIndex=0;
+        carousel();
+
+        function carousel(){
+            var i;
+            var x=document.getElementsByClassName("MySlides");
+            for(i=0;i<x.length;i++){
+                x[i].style.display="none";
+            }
+            slideIndex++;
+            if(slideIndex>x.length){slideIndex=1}
+            x[slideIndex-1].style.display="block";
+            setTimeout(carousel,2000);
+        }
+    </script>
 </body>
 </html>

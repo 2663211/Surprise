@@ -19,6 +19,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages   # 🔥 THIS IS THE FIX
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,7 +32,7 @@ jobs:
       - name: Upload site files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .   # root folder where index.html lives
+          path: .   # folder containing index.html
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
